@@ -33,23 +33,19 @@ span{
     background-color: var(--Light-Grayish-Blue);
 }
 
-.main{
+.content-container{
     display: flex;
-    width: auto;
-    height: auto;
-    border-radius: 20px;
-
+    width: 800px;
 }
 
 .content-1{
-    width: 350px;
+    flex: 1.5;
 }
 
 .content-2{
-    width: 500px;
+    flex: 2;
     background-color: white;
-    padding: 30px 40px;
-    border-radius: 0 20px 20px 0;
+    border-radius: 0px 20px 20px 0px;
 }
 
 .content-1 img{
@@ -59,8 +55,10 @@ span{
     border-radius: 20px 0 0 20px;
 }
 
-.description{
-    margin-bottom: 20px;
+.profile{
+    display: flex; 
+    align-items: center; 
+    padding:30px 40px;
 }
 
 .avatar img{
@@ -110,6 +108,24 @@ span{
     visibility: hidden;
 }
 
-.share-menu-active{
+.active{
     visibility: visible;
+}
+
+
+@media (max-width:800px){
+    .content-container{
+        flex-direction: column;
+        width: min(350px, calc(100vw - 40px));
+    }
+    .content-1{
+        width: 100%;
+    }
+    .content-1 img{
+        border-radius: 20px 20px 0 0;
+    }
+    .content-2{
+        width: 100%;
+        border-radius: 0 0px 20px 20px;
+    }
 }
